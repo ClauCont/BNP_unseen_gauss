@@ -18,9 +18,13 @@ All the outputs of the previous two scripts are stored in the folder `Results`.
 
 
 ### Helper Scripts
+- `Plotter.m` ...
+- `Tabler.m` ...
+- `Interval_maker.m` ...
+
+Furthermore, 
 - `MLThetaPY.m` outputs Empirical Bayes specifications of the parameter $(\alpha, \theta)$, given a dataset of counts.
 - `synthetic.m` generates .... . `zipf_rand.m`, which ... and `MLThetaPY.m`
-- `Plotter.m` ...
 - `rand_posterior_pd.m` and `rand_posterior_py.m`
 - `MC_Knm.m`
 - `rand_limit_posterior_py.m` for the computation of Mittag-Leffler credible intervals
