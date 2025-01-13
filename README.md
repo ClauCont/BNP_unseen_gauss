@@ -14,15 +14,8 @@ The following files contain the main code to run the experiments with the specif
 - `real_test.m` contains the parameter specifications of the real data used in section 4.2, plots figure 4.2 and the the four panels of figure A.1 and produces the data for tables 4.4, 4.5 and 4.6, saving each in a text file.
 
 ### Results
-The folder `Results` contains...
+All the outputs of the previous two scripts are stored in the folder `Results`. 
 
-Synthetic data:
-- `PANEL_A.fig`, `PANEL_B.fig`,`PANEL_C.fig`,`PANEL_D.fig`
-- `Table1.txt`
-
-Real data:
-- `PANEL_tf.fig`, `PANEL_mast.fig`,`PANEL_mastn.fig`,`PANEL_naeg`, `PANEL_naegaer`
-- `Table1_real.txt`
 
 ### Helper Scripts
 - `MLThetaPY.m` outputs Empirical Bayes specifications of the parameter $(\alpha, \theta)$, given a dataset of counts.
