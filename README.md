@@ -2,5 +2,5 @@
 This repository contains.... "Gaussian credible intervals in Bayesian nonparametric estimation of the unseen"
 
 ## TOC
-- ciao
+- the file `main.m`
 - ciao2
