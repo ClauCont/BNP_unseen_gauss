@@ -10,8 +10,8 @@ This directory contains all the code necessary to reproduce the numerical result
 
 ### Experiment Scripts
 The following files contain the main code to run the experiments with the specifications used in the paper, allowing to reproduce the figures and tables therein:
-- `synth_test.m` generates the synthetic data used in section 4.1, plots the four panels of figure 1.2 and produces the data for tables 4.1, 4.2 and 4.3, saving each in a text file.
-- `real_test.m` contains the parameter specifications of the real data used in section 4.2, plots figure 4.2 and the the four panels of figure A.1 and produces the data for tables 4.4, 4.5 and 4.6, saving each in a text file.
+- `synth_test.m` generates the synthetic data used in section 4.1, plots the four panels of figure 1.2 and produces the data for tables 4.1, 4.2 and 4.3, saving them in text files.
+- `real_test.m` contains the parameter specifications of the real data used in section 4.2, plots figure 4.2 and the the four panels of figure A.1 and produces the data for tables 4.4, 4.5 and 4.6, saving them in  text files.
 
 ### Results
 All the outputs of the previous two scripts are stored in the folder `Results` - see the relative README for further detail.
