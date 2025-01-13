@@ -14,17 +14,17 @@ The following files contain the main code to run the experiments with the specif
 - `real_test.m` contains the parameter specifications of the real data used in section 4.2, plots figure 4.2 and the the four panels of figure A.1 and produces the data for tables 4.4, 4.5 and 4.6, saving each in a text file.
 
 ### Results
-All the outputs of the previous two scripts are stored in the folder `Results`. 
+All the outputs of the previous two scripts are stored in the folder `Results` - see the relative README for further detail.
 
 
 ### Helper Scripts
+- `Interval_maker.m` ...
 - `Plotter.m` ...
 - `Tabler.m` ...
-- `Interval_maker.m` ...
 
 Furthermore, 
-- `MLThetaPY.m` outputs Empirical Bayes specifications of the parameter $(\alpha, \theta)$, given a dataset of counts.
 - `synthetic.m` generates .... . `zipf_rand.m`, which ... and `MLThetaPY.m`
+- `MLThetaPY.m` outputs Empirical Bayes specifications of the parameter $(\alpha, \theta)$, given a dataset of counts.
 - `rand_posterior_pd.m` and `rand_posterior_py.m`
 - `MC_Knm.m`
 - `rand_limit_posterior_py.m` for the computation of Mittag-Leffler credible intervals
