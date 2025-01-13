@@ -17,12 +17,12 @@ The following files contain the main code to run the experiments with the specif
 The folder `Results` contains...
 
 Synthetic data:
-- `PANEL_A`, `PANEL_B`,`PANEL_C`,`PANEL_D`
+- `PANEL_A.fig`, `PANEL_B.fig`,`PANEL_C.fig`,`PANEL_D.fig`
 - `Table1.txt`
 
 Real data:
-- `PANEL_A`, `PANEL_B`,`PANEL_C`,`PANEL_D`
-- `Table1.txt`
+- `PANEL_tf.fig`, `PANEL_mast.fig`,`PANEL_mastn.fig`,`PANEL_naeg`, `PANEL_naegaer`
+- `Table1_real.txt`
 
 ### Helper Scripts
 - `MLThetaPY.m` outputs Empirical Bayes specifications of the parameter $(\alpha, \theta)$, given a dataset of counts.
