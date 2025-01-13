@@ -16,6 +16,14 @@ The following files contain the main code to run the experiments with the specif
 ### Results
 The folder `Results` contains...
 
+Synthetic data:
+- `PANEL_A`, `PANEL_B`,`PANEL_C`,`PANEL_D`
+- `Table1.txt`
+
+Real data:
+- `PANEL_A`, `PANEL_B`,`PANEL_C`,`PANEL_D`
+- `Table1.txt`
+
 ### Helper Scripts
 - `MLThetaPY.m` outputs Empirical Bayes specifications of the parameter $(\alpha, \theta)$, given a dataset of counts.
 - `synthetic.m` generates .... . `zipf_rand.m`, which ... and `MLThetaPY.m`
