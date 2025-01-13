@@ -1,6 +1,6 @@
-function [Kmn] = MC_Knm( n, m, Kn, alpha, theta, n_var)
-%UNTITLED Summary of this function goes here
-%   Detailed explanation goes here
+function [Kmn] = MC_Knm(n, m, Kn, alpha, theta, n_var)
+% Monte Carlo sampling from predictive distribution of Kn
+
 K = Kn;
 i = 0;
 while i< m
@@ -14,12 +14,3 @@ while i< m
 end
  Kmn = K-Kn;
 
-
-% Require: n, Kn, m, α, θ
-% function MonteCarloK(n, Kn, m, α, θ)
-% K ← Kn
-% for i ← 0 to m − 1 do
-% b ← Random sample from Bernoulli 􏰁 θ+αK 􏰂 θ+n+i
-% K←K+b end for
-% returnK(n) =K−K mn
-% end function
