@@ -1,7 +1,6 @@
-function [] = Plotter(sample_params, max_nuu, num_evals, n_variate, panel_name)
+function [] = Plotter(sample_params, max_nuu, level, num_evals, n_variate, panel_name)
 
-ML_method = 'inverse';
-rng(11) % set seed
+exact_method = 'inverse';
 
 % extract sample parameters
 n = sample_params(1);
@@ -14,8 +13,11 @@ theta = sample_params(4);
 M = floor(n*linspace(0.01, max_nuu, num_evals));
 num_samples = length(M);
 
-[true_intervals, pitman_intervals, clt_intervals, means] = ...
-    Interval_maker(sample_params,M, ML_method, n_variate)
+intervals = Interval_maker(sample_params,M, level, exact_method, n_variate);
+true_intervals = intervals(1:2, :);
+pitman_intervals = intervals(3:4, :);
+clt_intervals = intervals(5:6, :);
+means = intervals(7, :);
 
 M = [0, M]; % add m = 0
 
@@ -36,14 +38,14 @@ if alpha< 0.001 % Dirichlet case
     fill(M2, inBetween, 'magenta','FaceAlpha',0.1, 'EdgeAlpha', 0.1, ...
         'EdgeColor','magenta');
     
-    % graphical specifications
+   % graphical specifications
     yl = ylim; 
     ylim([0, yl(2)]); 
 
     xl = xlim; 
-    xlim([xl(1), 5*n]); 
+    xlim([xl(1), max_nuu*n]); 
 
-    xticks(floor(n*[0, 1, 2, 3, 4, 5]))
+    xticks(floor(n*linspace(0, max_nuu, max_nuu+1)))
     xticklabels({'$0$', '$n$', '$2n$', '$3n$', '$4n$', '$5n$'})
     set(gca,"FontSize",40)
 
@@ -71,9 +73,9 @@ else % Pitman-Yor case
     ylim([0, yl(2)]); 
 
     xl = xlim; 
-    xlim([xl(1), 5*n]); 
+    xlim([xl(1), max_nuu*n]); 
 
-    xticks(floor(n*[0, 1, 2, 3, 4, 5]))
+    xticks(floor(n*linspace(0, max_nuu, max_nuu+1)))
     xticklabels({'$0$', '$n$', '$2n$', '$3n$', '$4n$', '$5n$'})
     set(gca,"FontSize",40)
 

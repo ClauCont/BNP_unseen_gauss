@@ -1,6 +1,4 @@
-function [] = Tabler(sample_params, nu_points, n_variate, panel_name, exact_method)
-% sample parameters
-rng(11)
+function [] = Tabler(sample_params, nu_points, level, n_variate, panel_name, exact_method)
 
 % extract sample parameters
 n = sample_params(1);
@@ -12,7 +10,7 @@ nu_points(nu_points == 0) = 0.01; % rand_posterior_py returns NaN if m = 0
 
 M = floor(n*nu_points);
 
-intervals = Interval_maker(sample_params,M, exact_method, n_variate);
+intervals = Interval_maker(sample_params,M, level, exact_method, n_variate);
 true_intervals = intervals(1:2, :);
 pitman_intervals = intervals(3:4, :);
 clt_intervals = intervals(5:6, :);
