@@ -10,9 +10,11 @@ num_samples = length(M);
 val = level + (1-level)/2;
 norm = norminv(val); % 97.5 percentile of standard Gaussian distribution
 % Posterior alpha-diversity and quantiles
-limit_py = rand_limit_posterior_py(n, j, alpha, theta, n_variate); 
-dx_lim = prctile(limit_py, val);
-sx_lim = prctile(limit_py, 1-val);
+if alpha>=0.001
+    limit_py = rand_limit_posterior_py(n, j, alpha, theta, n_variate); 
+    dx_lim = prctile(limit_py, val);
+    sx_lim = prctile(limit_py, 1-val);
+end
 
 % initialize intervals
 true_intervals = zeros(2, num_samples+1);
