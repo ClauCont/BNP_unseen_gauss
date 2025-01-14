@@ -17,14 +17,15 @@ The following two files contain the main code to run the experiments with the sp
 All the outputs of the scripts of the previous section are stored in the folder `Results` - see the relative README for details.
 
 
-### Helper Scripts
+### Other Scripts
 - `Interval_maker.m` takes as input a vector containing the parameters $n, j, \alpha\, \theta$, a vector $M$ of additional (integer) sample sizes, a confidence level between 0 and 1, the specification of a method for computing the exact intervals ('inverse' or 'MonteCarlo') and a number of variates for the sampling procedures. It outputs a matrix with the same number of columns as $M$ and 7 rows:
-  - rows 1 and 2 contain repectively the left and right extreme of the exact intervals, evaluated with the specified method, at the specified level for the corresponding value $m \in M$
-  - rows 3 and 4 contain repectively the left and right extreme of the Mittag-Leffler intervals 
-  - rows 5 and 6 contain repectively the left and right extreme of the Gaussian intervals 
+  - rows 1 and 2 contain respectively the left and right extreme of the exact intervals, evaluated with the specified method, at the specified level for the corresponding value $m \in M$
+  - rows 3 and 4 contain respectively the left and right extreme of the Mittag-Leffler intervals 
+  - rows 5 and 6 contain respectively the left and right extreme of the Gaussian intervals 
   - row 7 contains the BNP estimator of $K_{m}^{(n)}$
 - `Plotter.m` takes as input a vector containing the parameters $n, j, \alpha\, \theta$, a number 'max_nuu', a confidence level between 0 and 1 , a number 'num_evals' specifying the number of evenly distributed points in the interval $[0, max_{nuu} \cdot n]$ at which the intervals are evaluated, a number of variates for the sampling procedures and a string 'panel_name'. It plots, over the interval $[0, max_nuu*n]$, the BNP estiimator (solid black), the exact intervals (by default via inverse transform, dashed black), the Mittag-Leffler intervals (shaded blue) and the Gaussian intervals (shaded pink). 
-- `Tabler.m` takes as input a vector containing the parameters $n, j, \alpha\, \theta$, a vector $M$ of additional (integer) sample sizes, a confidence level between 0 and 1, a number of variates for the sampling procedures, a string 'panel_name' and the specification of a method for computing the exact intervals ('inverse' or 'MonteCarlo'). ............ 
+- `Tabler.m` takes as input a vector containing the parameters $n, j, \alpha\, \theta$, a vector nu_points of mutliplicative factors, a confidence level between 0 and 1, a number of variates for the sampling procedures, a string 'panel_name' and the specification of a method for computing the exact intervals ('inverse' or 'MonteCarlo'). It produces a text file containing the output of `Interval_maker.m` evaluated at 
+$n, j, \alpha\, \theta$ and $M = n \cdot nu_{points}$ and two additional rows containing the coverage of the Mittag-Leffler and Gaussian interval.
 
 Furthermore, 
 - `synthetic.m` generates .... . `zipf_rand.m`, which ... and `MLThetaPY.m`
