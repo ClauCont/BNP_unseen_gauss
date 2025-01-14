@@ -14,7 +14,7 @@ The following two files contain the main code to run the experiments with the sp
 - `real_test.m` contains the parameter specifications of the real data used in section 4.2, plots figure 4.2 and the the four panels of figure A.1 and produces the data for tables 4.4, 4.5 and 4.6, saving them in  text files.
 
 ### Results
-All the outputs of the scripts of the previous section are stored in the folder `Results` - see the relative README for details.
+All the outputs of the scripts of the previous section are stored in the folder `Results` - see the corresponding README for details.
 
 
 ### Other Scripts
