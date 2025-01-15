@@ -1,6 +1,5 @@
 function [sample_params] = synthetic(name, par)
 
-rng(11)
 % generate data
 % set parameters
 params_zipf = par(1); 
