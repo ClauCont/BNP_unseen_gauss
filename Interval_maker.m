@@ -8,12 +8,14 @@ theta = sample_params(4);
 
 num_samples = length(M);
 val = level + (1-level)/2;
+prc_val = val*100;
 norm = norminv(val); % 97.5 percentile of standard Gaussian distribution
+
 % Posterior alpha-diversity and quantiles
 if alpha>=0.001
     limit_py = rand_limit_posterior_py(n, j, alpha, theta, n_variate); 
-    dx_lim = prctile(limit_py, val);
-    sx_lim = prctile(limit_py, 1-val);
+    dx_lim = prctile(limit_py, prc_val);
+    sx_lim = prctile(limit_py, 100-prc_val);
 end
 
 % initialize intervals
@@ -29,8 +31,7 @@ for i = 1: num_samples
     % exact and Mittag-Leffler intervals
     if alpha<0.001 % Dirichlet case - no Mittag-Leffler interval
         if strcmp(exact_method, 'inverse')
-            % sample from exact distribution
-            exact_py = rand_posterior_pd(m,n,theta,n_variate);
+            exact_py = rand_posterior_pd(m,n,theta,n_variate);  % sample from exact distribution
         elseif strcmp(exact_method, 'MonteCarlo')
             exact_py = MC_Knm(n,m,j, 0, theta, n_variate); 
         else
@@ -57,8 +58,8 @@ for i = 1: num_samples
     end
     
     % exact intervals
-    dx = prctile(exact_py, val);
-    sx = prctile(exact_py, 1-val);
+    dx = prctile(exact_py, prc_val);
+    sx = prctile(exact_py, 100-prc_val);
     
     % Gaussian approximation:
     % nu, tau, rho, lambda
