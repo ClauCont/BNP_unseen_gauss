@@ -39,19 +39,18 @@ Plotter(panel_D, max_nu, level, num_evals, n_variate, 'D')
 nu_points = [1, 2, 3, 4, 5];
 exact_method = 'inverse';
 Tabler(panel_A, nu_points, level, n_variate, 'A', exact_method)
-disp(rng)
 Tabler(panel_B, nu_points, level, n_variate, 'B', exact_method)
 Tabler(panel_C, nu_points, level, n_variate, 'C', exact_method)
 Tabler(panel_D, nu_points, level, n_variate, 'D', exact_method)
 
 
 %% table 4.6
-rng(11)
-nu_points = [1, 5, 10, 100];
+nu_points = [10, 50, 100, 1000];
 n_variate = 2000;
 exact_method = 'MonteCarlo';
 Tabler(panel_A, nu_points, level, n_variate, 'A', exact_method)
 Tabler(panel_B, nu_points, level, n_variate, 'B', exact_method)
 Tabler(panel_C, nu_points, level, n_variate, 'C', exact_method)
 Tabler(panel_D, nu_points, level, n_variate, 'D', exact_method)
+disp(rng)
 

@@ -2,8 +2,16 @@
 clear all
 close all
 clc
+% change all interpreters from tex to latex. 
+list_factory = fieldnames(get(groot,'factory'));
+index_interpreter = find(contains(list_factory,'Interpreter'));
+for i = 1:length(index_interpreter)
+    default_name = strrep(list_factory{index_interpreter(i)},'factory','default');
+    set(groot, default_name,'latex');
+end
 
-rng(0, 'twister') %set seed
+% set seed
+rng(0, 'twister') p
 
 % datasets
 tomato_flower = [2586, 1825, 0.612, 741];
@@ -34,7 +42,7 @@ Tabler(naegleria_aer, nu_points, level, n_variate, 'naegA', exact_method)
 Tabler(naegleria_anaer, nu_points, level, n_variate, 'naegAnA', exact_method)
 
 %% table 4.6
-nu_points = [1, 5, 10, 100];
+nu_points = [10, 50, 100, 500];
 n_variate = 2000;
 exact_method = 'MonteCarlo';
 Tabler(tomato_flower, nu_points, level , n_variate, 'tomato', exact_method)
