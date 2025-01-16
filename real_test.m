@@ -11,7 +11,7 @@ for i = 1:length(index_interpreter)
 end
 
 % set seed
-rng(0, 'twister') p
+rng(0, 'twister') 
 
 % datasets
 tomato_flower = [2586, 1825, 0.612, 741];
