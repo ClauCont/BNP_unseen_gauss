@@ -30,10 +30,10 @@ max_nu = 5; % 5
 num_evals = 50; % 50
 n_variate = 2000; % 2000
 level = 0.95;
-Plotter(panel_A, max_nu, level, num_evals, n_variate, 'A')
-Plotter(panel_B, max_nu, level, num_evals, n_variate, 'B')
-Plotter(panel_C, max_nu, level, num_evals, n_variate, 'C')
-Plotter(panel_D, max_nu, level, num_evals, n_variate, 'D')
+Plotter(panel_A, max_nu, level, num_evals, n_variate, 'A', 'True')
+Plotter(panel_B, max_nu, level, num_evals, n_variate, 'B', 'True')
+Plotter(panel_C, max_nu, level, num_evals, n_variate, 'C', 'True')
+Plotter(panel_D, max_nu, level, num_evals, n_variate, 'D', 'True')
 
 %% table 4.5
 nu_points = [1, 2, 3, 4, 5];

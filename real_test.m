@@ -11,7 +11,7 @@ for i = 1:length(index_interpreter)
 end
 
 % set seed
-rng(0, 'twister') 
+rng(0, 'twister')
 
 % datasets
 tomato_flower = [2586, 1825, 0.612, 741];
@@ -25,11 +25,11 @@ max_nu = 5;
 num_evals = 50;
 n_variate = 2000;
 level = 0.95;
-Plotter(tomato_flower, max_nu, level, num_evals, n_variate, 'tf')
-Plotter(mastigamoeba, max_nu, level, num_evals, n_variate, 'mast')
-Plotter(mastigamoeba_norm, max_nu, level, num_evals, n_variate, 'mastN')
-Plotter(naegleria_aer, max_nu, level, num_evals, n_variate, 'naegA')
-Plotter(naegleria_anaer, max_nu, level, num_evals, n_variate, 'naegAA')
+Plotter(tomato_flower, max_nu, level, num_evals, n_variate, 'tf', 'True')
+Plotter(mastigamoeba, max_nu, level, num_evals, n_variate, 'mast', 'True')
+Plotter(mastigamoeba_norm, max_nu, level, num_evals, n_variate, 'mastN', 'True')
+Plotter(naegleria_aer, max_nu, level, num_evals, n_variate, 'naegA', 'True')
+Plotter(naegleria_anaer, max_nu, level, num_evals, n_variate, 'naegAA', 'True')
 
 %% table 4.5
 nu_points = [1, 2, 3, 4, 5];

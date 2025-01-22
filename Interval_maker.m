@@ -54,7 +54,7 @@ for i = 1: num_samples
         adj_sx_95_lim_ci = r.*sx_lim;
         adj_dx_95_lim_ci = r.*dx_lim;
 
-        pitman_intervals(:, i+1) = [adj_sx_95_lim_ci, adj_dx_95_lim_ci];
+        pitman_intervals(:, i+1) = [round(adj_sx_95_lim_ci), round(adj_dx_95_lim_ci)];
     end
     
     % exact intervals
@@ -81,9 +81,9 @@ for i = 1: num_samples
 
 
     % update results
-    true_intervals(:, i+1) = [sx, dx];
-    clt_intervals(:, i+1) = [clt_sx, clt_dx];
-    means(i+1) = m*mean;
+    true_intervals(:, i+1) = [round(sx), round(dx)];
+    clt_intervals(:, i+1) = [round(clt_sx), round(clt_dx)];
+    means(i+1) = round(m*mean);
     
     % output
     intervals = [true_intervals; pitman_intervals; clt_intervals,; means];

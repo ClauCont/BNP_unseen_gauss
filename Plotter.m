@@ -1,4 +1,4 @@
-function [] = Plotter(sample_params, max_nuu, level, num_evals, n_variate, panel_name)
+function [] = Plotter(sample_params, max_nuu, level, num_evals, n_variate, panel_name, coverage)
 
 exact_method = 'inverse';
 
@@ -84,4 +84,60 @@ end
 
 figname = sprintf('PANEL_%s.fig', panel_name);
 savefig(figname)
+
+if coverage == 'True'
+    % coverage
+    num_samples = length(M);
+    coverage_ml = zeros(1, num_samples);
+    coverage_gauss = zeros(1, num_samples);
+
+
+    coverage_ml = Coverage(true_intervals, pitman_intervals);
+    coverage_gauss = Coverage(true_intervals, clt_intervals);
+
+    coverage_ml(1) = 1;
+    coverage_gauss(1) = 1;
+
+
+    % plot panels
+
+    figure()
+    if alpha< 0.001 % Dirichlet case
+        plot (M(2:end), coverage_gauss(2:end) ,'r', 'LineWidth', 1) 
+    
+    % graphical specifications
+        yl = ylim; 
+        ylim([0, yl(2)]); 
+
+        xl = xlim; 
+        xlim([xl(1), max_nuu*n]); 
+
+        xticks(floor(n*linspace(0, max_nuu, max_nuu+1)))
+        xticklabels({'$0$', '$n$', '$2n$', '$3n$', '$4n$', '$5n$'})
+        set(gca,"FontSize",40)
+
+        xlabel('$m$')
+
+    else % Pitman-Yor case
+        plot (M(2:end), coverage_ml(2:end) ,'b', 'LineWidth', 1) % plot means
+        hold on
+        plot (M(2:end), coverage_gauss(2:end) ,'r', 'LineWidth', 1) 
+    
+        % graphical specifications
+        yl = ylim; 
+        ylim([0, yl(2)]); 
+
+        xl = xlim; 
+        xlim([xl(1), max_nuu*n]); 
+
+        xticks(floor(n*linspace(0, max_nuu, max_nuu+1)))
+        xticklabels({'$0$', '$n$', '$2n$', '$3n$', '$4n$', '$5n$'})
+        set(gca,"FontSize",40)
+
+        xlabel('$m$')
+    end
+
+    figname = sprintf('Coverage_PANEL_%s.fig', panel_name);
+    savefig(figname)
+end
 end

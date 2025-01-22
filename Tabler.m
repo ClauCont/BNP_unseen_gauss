@@ -21,18 +21,9 @@ num_samples = length(M);
 coverage_ml = zeros(1, num_samples);
 coverage_gauss = zeros(1, num_samples);
 
-intersection_sx_ml = max([true_intervals(1, :); pitman_intervals(1, :)]);
-intersection_dx_ml = min([true_intervals(2, :); pitman_intervals(2, :)]);
 
-intersection_sx_g = max([true_intervals(1, :); clt_intervals(1, :)]);
-intersection_dx_g = min([true_intervals(2, :); clt_intervals(2, :)]);
-
-len_real = true_intervals(2, :) - true_intervals(1, :);
-len_ml = intersection_dx_ml - intersection_sx_ml;
-len_gauss = intersection_dx_g - intersection_sx_g;
-
-coverage_ml = len_ml./len_real;
-coverage_gauss = len_gauss./len_real;
+coverage_ml = Coverage(true_intervals, pitman_intervals);
+coverage_gauss = Coverage(true_intervals, clt_intervals);
 
 coverage_ml(1) = 1;
 coverage_gauss(1) = 1;
